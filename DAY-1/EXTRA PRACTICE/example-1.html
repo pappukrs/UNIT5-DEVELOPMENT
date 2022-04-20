@@ -14,7 +14,7 @@
    <br>
    <br>
    <button onclick="start()">START</button>
-   <button onclick="stop()">START</button>
+   <button onclick="stop()">STOP</button>
    <br>
    <br>
    <br>
@@ -24,13 +24,19 @@
    </div>
 </body>
 <script>
-  
+  let image;
+if(localStorage.getItem("image")===null){
+  image=[];
+}
+else{
+   image=JSON.parse(localStorage.getItem("image"));
+}
 
-let image=[];
 
   function storeImage(){
 let img=document.querySelector('#url').value;
 image.push(img);
+localStorage.setItem("image",JSON.stringify(image));
 console.log(image);
   }
 
@@ -38,13 +44,15 @@ console.log(image);
       let slideShowImgElement=document.querySelector('#img');
      var i=0;
      var x=setInterval(function(){
+      if(i>=image.length){
+        i=0;
+        //  clearInterval(x);
+     }
         slideShowImgElement.src=image[i];
         i=i+1;
      },2000)
      
-     if(i>5){
-         clearInterval(x);
-     }
+     
       
 
   }
