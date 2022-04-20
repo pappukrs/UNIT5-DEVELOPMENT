@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slideShow</title>
+</head>
+<body>
+   <input type="text" id="url"/>
+   <button onclick="storeImage()">SUBBMIT IMAGE</button>
+   <br>
+   <br>
+   <br>
+   <br>
+   <button onclick="start()">START</button>
+   <button onclick="stop()">START</button>
+   <br>
+   <br>
+   <br>
+   <br>
+   <div id="container">
+       <img src="" id="img"/>
+   </div>
+</body>
+<script>
+  
+
+let image=[];
+
+  function storeImage(){
+let img=document.querySelector('#url').value;
+image.push(img);
+console.log(image);
+  }
+
+  function start(){
+      let slideShowImgElement=document.querySelector('#img');
+     var i=0;
+     var x=setInterval(function(){
+        slideShowImgElement.src=image[i];
+        i=i+1;
+     },2000)
+     
+     if(i>5){
+         clearInterval(x);
+     }
+      
+
+  }
+</script>
+</html>
