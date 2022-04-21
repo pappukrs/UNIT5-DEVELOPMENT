@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIRTUAL MCDONALD'S</title>
+    <link rel="stylesheet" href="./style/index.css">
+</head>
+<body>
+    <h1 id="H1top">MCDONALD'S RESTAURANT</h1>
+
+
+   
+<form>
+    <p>Add your veggies:</p>
+    <input type="checkbox" name="veggies" id="veg1" value="tomato" onclick="return ValidateSelection();">
+    <label for="veg1" >Tomato</label>
+    <input form="myForm" type="checkbox" name="veggies" id="veg2"  value="onion" onclick="return ValidateSelection();"> 
+    <label for="veg2">Onion</label>
+    <input form="myForm" type="checkbox" name="veggies" id="veg3"  value="lettuce" onclick="return ValidateSelection();"> 
+    <label for="veg3">Lettuce</label>
+    <input type="checkbox" name="veggies" id="veg4" value="capsicum" disabled> 
+    <label for="veg4">Capsicum</label>
+<p><input type="submit" value="Submit"></p>
+<form action="" target="result3" method="get" id="myForm">
+</form>
+
+    
+    
+</body>
+<script src="./script/index.js"></script>
+</html>
