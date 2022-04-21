@@ -5,61 +5,77 @@ var movieArr=[
         IMDb_rating:"8.2/10"
         },
 
-        {name:"The Batman",
+        {name:"K.G.F:Chapter 2",
         release_date:"22 MARCH 2022",
         poster:"https://cdn.pixabay.com/photo/2016/12/27/10/07/dc-comics-1933663__340.png",
-        IMDb_rating:"8.2/10"
+        IMDb_rating:"9.6/10"
         },
-        {name:"The Batman",
+        {name:"RRR",
         release_date:"22 MARCH 2022",
         poster:"https://cdn.pixabay.com/photo/2016/12/27/10/07/dc-comics-1933663__340.png",
-        IMDb_rating:"8.2/10"
+        IMDb_rating:"9.9/10"
         },
-        {name:"The Batman",
+        {name:"JERSEY",
         release_date:"22 MARCH 2022",
         poster:"https://cdn.pixabay.com/photo/2016/12/27/10/07/dc-comics-1933663__340.png",
-        IMDb_rating:"8.2/10"
+        IMDb_rating:"7.9/10"
         },
-        {name:"The Batman",
+        {name:"Fantastic Beasts",
         release_date:"22 MARCH 2022",
         poster:"https://cdn.pixabay.com/photo/2016/12/27/10/07/dc-comics-1933663__340.png",
-        IMDb_rating:"8.2/10"
+        IMDb_rating:"6.6/10"
         },
-        {name:"The Batman",
+        {name:"BEAST",
         release_date:"22 MARCH 2022",
         poster:"https://cdn.pixabay.com/photo/2016/12/27/10/07/dc-comics-1933663__340.png",
-        IMDb_rating:"8.2/10"
+        IMDb_rating:"6.9/10"
         },
-        {name:"The Batman",
+        {name:"GANGUBAI KATHIAWADI",
         release_date:"22 MARCH 2022",
         poster:"https://cdn.pixabay.com/photo/2016/12/27/10/07/dc-comics-1933663__340.png",
-        IMDb_rating:"8.2/10"
+        IMDb_rating:"7.0/10"
         },
-        {name:"The Batman",
+        {name:"Sonic the Hedgehog 2",
         release_date:"22 MARCH 2022",
         poster:"https://cdn.pixabay.com/photo/2016/12/27/10/07/dc-comics-1933663__340.png",
-        IMDb_rating:"8.2/10"
+        IMDb_rating:"7.0/10"
         },
-        {name:"The Batman",
+        {name:"Operation Romeo",
         release_date:"22 MARCH 2022",
         poster:"https://cdn.pixabay.com/photo/2016/12/27/10/07/dc-comics-1933663__340.png",
-        IMDb_rating:"8.2/10"
+        IMDb_rating:"8.1/10"
         },
-        {name:"The Batman",
+        {name:"The Kashmir files",
         release_date:"22 MARCH 2022",
         poster:"https://cdn.pixabay.com/photo/2016/12/27/10/07/dc-comics-1933663__340.png",
-        IMDb_rating:"8.2/10"
+        IMDb_rating:"8.3/10"
         },
-        {name:"The Batman",
+        {name:"Supreme Motherhood",
         release_date:"22 MARCH 2022",
         poster:"https://cdn.pixabay.com/photo/2016/12/27/10/07/dc-comics-1933663__340.png",
-        IMDb_rating:"8.2/10"
+        IMDb_rating:"9.1/10"
         },
-        {name:"The Batman",
+        {name:"Superstar",
         release_date:"22 MARCH 2022",
         poster:"https://cdn.pixabay.com/photo/2016/12/27/10/07/dc-comics-1933663__340.png",
-        IMDb_rating:"8.2/10"
+        IMDb_rating:"4.8/10"
         },
+        {name:"King Richard",
+        release_date:"22 MARCH 2022",
+        poster:"https://cdn.pixabay.com/photo/2016/12/27/10/07/dc-comics-1933663__340.png",
+        IMDb_rating:"7.5/10"
+        },
+        {name:"Doctor strange in the Multiverse",
+        release_date:"22 MARCH 2022",
+        poster:"https://cdn.pixabay.com/photo/2016/12/27/10/07/dc-comics-1933663__340.png",
+        IMDb_rating:"4.9/10"
+        },
+        {name:"PUSHPA",
+        release_date:"22 MARCH 2022",
+        poster:"https://cdn.pixabay.com/photo/2016/12/27/10/07/dc-comics-1933663__340.png",
+        IMDb_rating:"10/10"
+        },
+
 ]
 
 localStorage.setItem("movieArr",JSON.stringify(movieArr));
