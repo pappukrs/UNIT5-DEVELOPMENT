@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMDB MOVIE SEARCH</title>
+    <style>
+        *{margin:0;
+        padding:0;
+        box-sizing: border-box;
+        }
+        body{
+        margin-left:3%;
+        margin-right:3%;
+        padding:10px;
+        }
+        .search{
+            display:flex;
+            background-color:teal;
+            margin-left:30%;
+            margin-right:30%;
+            
+        }
+        #searched{
+            width:100%;
+            height:auto;
+            padding:10px;
+        }
+        #searchBTN{
+            background-color:black;
+            color:white;
+            padding:10px;
+            font-size:30px;
+            cursor:pointer;
+        }
+        #searchBTN:hover{
+            background-color:white;
+            color:red;
+        }
+
+        #container{
+            width:700PX;
+            height:700px;
+            margin-left:20%;
+            margin-right:20%;
+            padding:30px;
+        }
+        #container img{
+            width:700PX;
+            height:500px;
+        }
+
+        #textDIV{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            /* background-color: black; */
+
+            
+        }
+        #textDIV p{
+            font-size:30px;
+        }
+        #textDIV h4{
+            font-size:50px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+      <div class="search">
+    <input type="text" id="searched" placeholder="Search MOVIE" />
+    <button id="searchBTN" onclick="search()">SEARCH</button>
+    </div>
+
+    <div id="container"></div>
+</body>
+<script>
+    
+    let API_KEY=`fff199ae`;
+    let container=document.querySelector('#container');
+
+
+    function search(){
+        let movie=document.querySelector("#searched").value;
+        let url=`http://www.omdbapi.com/?apikey=${API_KEY}&t=${movie}`;
+        async function getData(){
+         try {
+             
+            let res=await fetch(url);
+           let res1=await res.json();
+        
+           console.log(res1.Poster);
+           DISPLAY(res1);
+
+         } catch (error) {
+            //  console.log("error")
+         }
+
+           
+        }
+        getData();
+
+
+    }
+
+    function DISPLAY(data){
+        container.innerHTML=``;
+        let movieCard=document.createElement('div');
+
+        let img=document.createElement('img');
+        img.src=data.Poster;
+
+        let textDIV=document.createElement('div');
+        textDIV.setAttribute("id","textDIV")
+
+        let name=document.createElement('h4');
+        name.textContent=data.Title;
+
+        let year=document.createElement('p');
+        year.textContent=`Released Year:${data.Year}`;
+
+        let IMDb_rating=document.createElement('p');
+        IMDb_rating.textContent=`IMDb_rating: ${data.imdbRating}`;
+
+        textDIV.append(name,year,IMDb_rating)
+        movieCard.append(img,textDIV);
+
+        container.append(movieCard);
+
+
+    }
+    
+</script>
+</html>
