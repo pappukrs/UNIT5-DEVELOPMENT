@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaccine Booth Alert System</title>
+</head>
+<body>
+    <h1>Vaccine Booth Alert System</h1>
+     <hr>  
+     <input type="text" placeholder="ENTER YOUR NAME" id="name" />
+     <button onclick="register()">REGISTER</button>   
+</body>
+<script>
+    var intervalid;
+    let Q=[`ROSS`,`TAYLOR`,`ROHAN`];
+    function register(){
+        let name=document.querySelector('#name').value;
+        Q.push(name);
+        console.log(Q);
+        let message=`${name} Congratulations you have been registered! please wait for your turn `;
+        alert(message);
+       
+        let myPromise=new Promise((resolve, reject) =>{
+          let intervalId=  setInterval(() =>{
+            console.log(Q);
+                if(name===Q[0]){
+                resolve(`${name} Your turn come!!`);
+                clearInterval(intervalId)
+            }
+            // else{
+            //     reject(`wait`);
+            // }
+            },1000);
+        });
+        myPromise.then((res)=>{
+            // console.log(res);
+            alert(res);
+        }).catch((err)=>{
+            // console.log(err);
+            alert(err);
+        });
+        // startVaccination();
+    }
+    function startVaccination(){
+    Q.shift();
+    if(Q.length===0){
+        clearInterval(intervalid);
+      }
+    }
+    intervalid=setInterval(startVaccination,4000);
+</script>
+</html>
