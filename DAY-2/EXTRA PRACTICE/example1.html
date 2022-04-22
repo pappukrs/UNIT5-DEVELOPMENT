@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reqres</title>
+</head>
+<style>
+    #container{
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        margin-left:20%;
+        margin-right:20%;
+        gap:40px;
+
+    }
+    #container>div{
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content:center;
+        background-color:pink;
+       padding:5px;
+       border:3px solid black;
+    }
+</style>
+<body>
+    <div id="container"></div>
+    
+</body>
+<script>
+
+    let container=document.querySelector('#container');
+   let url=`https://reqres.in/api/users?page=2`; 
+  let myRequest=fetch(url);
+  myRequest.then((res)=>{
+      res.json().then((res1)=>{
+        console.log(res1.data);
+      const usrData=res1.data
+        Display(usrData);
+      });
+      
+      
+  }).catch(()=>{
+
+  })
+
+
+  function Display(usrData){
+
+
+    usrData.forEach((DATA)=>{
+        let profileCard=document.createElement('div');
+
+    let img=document.createElement('img');
+    img.src=DATA.avatar;
+
+    let name=document.createElement('p');
+    name.textContent=`${DATA.first_name} ${DATA.last_name}`;
+
+    profileCard.append(img,name);
+    container.append(profileCard);
+
+    }
+  
+  
+    )}
+</script>
+</html>
+
