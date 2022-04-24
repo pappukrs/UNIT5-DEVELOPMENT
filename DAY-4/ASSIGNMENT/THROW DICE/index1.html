@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THROW DICE</title>
+</head>
+<body>
+
+    <div id="winner"></div>
+      
+    <div id="member-1">MEMBER A</div>
+    <div id="member-2">MEMBER B</div>
+    <div id="member-3">MEMBER C</div>
+
+    <button id="roll">ROLL THE DICE</button>
+    
+</body>
+<script>
+    document.querySelector("#roll").addEventListener("click",roll);
+
+    
+    function roll(){
+        let arr=[];
+        var member1=document.querySelector("#member-1");
+        var member2=document.querySelector("#member-2");
+        var member3=document.querySelector("#member-3");
+        var winner=document.querySelector("#winner");
+
+        setTimeout(function(){
+         
+            let randomNumber1=Math.floor((Math.random()*6)+1);
+            let randomNumber2=Math.floor((Math.random()*6)+1);
+            let randomNumber3=Math.floor((Math.random()*6)+1);
+
+          arr.push(randomNumber1,randomNumber2,randomNumber3);
+          arr.sort((a,b)=>{return a-b;});
+
+
+
+            member1.innerText=`MEMBER A SCORE:${randomNumber1}`
+            member2.innerText=`MEMBER B SCORE:${randomNumber2}`
+            member3.innerText=`MEMBER C SCORE:${randomNumber3}`
+
+
+             if(arr[0]===arr[1]===arr[2]){
+                member1.style.backgroundColor="blue";
+                member2.style.backgroundColor="blue";
+                member3.style.backgroundColor="blue";
+                winner.innerText=`DRAW`;
+             }
+             else if(arr[0]==arr[1] && arr[0]!=arr[2]){
+                member1.style.backgroundColor="blue";
+                member2.style.backgroundColor="blue";
+                member3.style.backgroundColor="red";
+                winner.innerText=`DRAW`;
+             }
+             else if(arr[0]==arr[2] && arr[0]!=arr[1]){
+                member1.style.backgroundColor="red";
+                winner.innerText=`DRAW`;
+             }
+             else if(arr[1]==arr[2] && arr[0]!=arr[2]){
+                member1.style.backgroundColor="red";
+                winner.innerText=`DRAW`;
+             }
+             else{
+                winner.innerText=`WINNER SCORE IS ${arr[2]}`;
+             }
+              
+          
+       
+            
+
+           
+           
+        },2000);
+    }
+</script>
+</html>
