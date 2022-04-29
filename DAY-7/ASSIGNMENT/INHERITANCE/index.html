@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INHERITANCE</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const obj={
+        brandName:"Thar",
+        numberofwheels:4,
+        backlight:true,
+        brake:true,
+        modelNO:78855,
+    }
+
+    const model=Object.create(obj);
+    model.modelNO=797666;
+    console.log(model);
+</script>
+</html>
