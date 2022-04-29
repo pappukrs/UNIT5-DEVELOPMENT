@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array methods</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function array () {
+  let arr = Object.create(array.prototype)
+
+  Object.defineProperty(arr, 'length', {
+    value: 0,
+    enumerable: false,
+    writable: true,
+  })
+
+  for (key in arguments) {
+    arr[key] = arguments[key]
+    arr.length += 1
+  }
+
+  return arr
+}
+
+array.prototype.push = function (element) {
+  this[this.length] = element
+  this.length++
+  return this.length
+}
+
+array.prototype.pop = function () {
+  this.length--
+  const elementToRemove = this[this.length]
+  delete this[this.length]
+  return elementToRemove
+}
+
+array.prototype.top= function () {
+  const topEle=this[this.length];
+  return topEle;
+}
+
+array.prototype.print=function (){
+var line=[];
+for(var i=0;i<this.length;i++){
+    line.push(this[i]);
+}
+return line;
+}
+
+array.prototype.printReverse=function(){
+    var line=[];
+for(var i=this.length;i>=0;i--){
+    line.push(this[i]);
+}
+return line;
+}
+
+array.prototype.size=function(){
+ var length=this.length;
+ return length;
+}
+
+let friends = array('Jordyn', 'Mikenzi')
+
+// friends.push('Joshy') // 3
+// friends.push('Jake') // 4
+
+// friends.pop() // Jake
+
+
+
+</script>
+</html>
